@@ -13,3 +13,5 @@ if torch.cuda.is_available():
 # Optional: Test if a tensor can be moved to the GPU
 x = torch.tensor([1.0, 2.0, 3.0]).cuda()  # move tensor to GPU
 print("Tensor device:", x.device)
+
+print("lol")
