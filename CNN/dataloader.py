@@ -34,10 +34,10 @@ trans_img_to_tensor = transforms.Compose([
 
 #------functions------#      
 def load_tomato_dataset():
-      tomato_dataset = datasets.ImageFolder(root=plantvillage_data_path, transform = trans_img_to_tensor)
+      tomato_dataset = datasets.ImageFolder(root=plantvillage_data_path,transform= trans_img_to_tensor)
       return tomato_dataset   
 
-def create_train_and_test_dataset(tomato_dataset=None):
+def create_train_and_test_dataset(tomato_dataset):
       if tomato_dataset is None:
             tomato_dataset = load_tomato_dataset()
       train_size = int(0.8* len(tomato_dataset))
@@ -53,20 +53,23 @@ def create_train_and_test_dataset(tomato_dataset=None):
 #display random img from dataset
 #args are dataset and list of class name
 def show_random_sample(dataset, class_names=None):
-    idx = random.randint(0, len(dataset) - 1)
-    img, label = dataset[idx]
+    index = random.randint(0, len(dataset) - 1)
+    img, label = dataset[index]
 
     # Convert tensor (C,H,W) → (H,W,C)
     if isinstance(img, torch.Tensor):
+
+        mean = torch.tensor([0.485, 0.456, 0.406])
+        std  = torch.tensor([0.229, 0.224, 0.225])
+        img = img * std[:, None, None] + mean[:, None, None]
         img = img.permute(1, 2, 0)
+        img = img.clamp(0, 1)
 
     plt.imshow(img)
     plt.axis("off")
 
-    if class_names is not None:
-        plt.title(f"Label: {class_names[label]}")
-    else:
-        plt.title(f"Label: {label}")
+    
+    plt.title(f"Label: {class_names[label]}")
 
     plt.show()
 
