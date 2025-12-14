@@ -38,7 +38,7 @@ def load_tomato_dataset():
       tomato_dataset = datasets.ImageFolder(root=plantvillage_data_path,transform= trans_img_to_tensor)
       return tomato_dataset   
 
-def create_train_and_test_dataset(tomato_dataset):
+def create_train_and_test_dataset(batch_size,tomato_dataset= None):
       if tomato_dataset is None:
             tomato_dataset = load_tomato_dataset()
       train_size = int(0.8* len(tomato_dataset))
@@ -46,8 +46,8 @@ def create_train_and_test_dataset(tomato_dataset):
 
       train_dataset, test_dataset = torch.utils.data.random_split(tomato_dataset, [train_size, test_size])
 
-      train_loader = DataLoader(train_dataset,batch_size=BATCH_SIZE,shuffle=True)
-      test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle= False)
+      train_loader = DataLoader(train_dataset,batch_size=batch_size,shuffle=True)
+      test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle= False)
 
       return train_dataset,test_dataset,train_loader,test_loader
 
