@@ -42,6 +42,6 @@ print(f"Class names: {tomato_dataset.classes}")
 
 sample_model =CNNmodel.init_model()
 
-CNNmodel.train_test_model(train_loader,test_loader,sample_model,25)
+CNNmodel.train_test_model(train_loader,test_loader,sample_model,10)
 
 torch.save(sample_model.state_dict(),"model.pth")

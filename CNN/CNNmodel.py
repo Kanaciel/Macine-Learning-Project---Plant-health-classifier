@@ -13,7 +13,6 @@ class Classifier(nn.Module):
             self.relu = nn.ReLU()
             self.maxpool = nn.MaxPool2d(2,2)
             self.dropout = nn.Dropout1d(0.05)
-            self.softmax =nn.Softmax()
             #distinct stuffs
             self.conv1 = nn.Conv2d(3,32,3,1,1)
             self.bn1 = nn.BatchNorm2d(32)
@@ -46,7 +45,7 @@ class Classifier(nn.Module):
             x = self.relu(self.fc1(x))
             x = self.dropout(x)
             x = self.relu(self.fc2(x))
-            x = self.relu(self.fc3(x))
+            x = self.fc3(x)
             return x
             
 def init_model():
