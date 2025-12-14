@@ -33,6 +33,7 @@ trans_img_to_tensor = transforms.Compose([
 ])
 
 #------functions------#      
+
 def load_tomato_dataset():
       tomato_dataset = datasets.ImageFolder(root=plantvillage_data_path,transform= trans_img_to_tensor)
       return tomato_dataset   
@@ -68,8 +69,8 @@ def show_random_sample(dataset, class_names=None):
     plt.imshow(img)
     plt.axis("off")
 
-    
-    plt.title(f"Label: {class_names[label]}")
+
+    plt.title(f"Label: {class_names[label]} (index {label})")
 
     plt.show()
 
