@@ -1,9 +1,14 @@
 import torch
 import torch.nn as nn
 import time
+from pathlib import Path
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+root_path = Path(__file__).resolve().parent.parent
+models_folder_path = root_path/"Models"
 
+
+#---------functions and stuffs-----#
 #abberation of god
 class Classifier(nn.Module):
       def __init__(self):
@@ -48,13 +53,19 @@ class Classifier(nn.Module):
             x = self.fc3(x)
             return x
             
-def init_model():
+def init_model(model_name = None):
       model = Classifier()
       model.to(device)
+      if model_name is not None:
+            model_path = models_folder_path/ f"{model_name}.pth"
+            model.load_state_dict(torch.load(model_path, map_location=device, weights_only= True))
+            print(f"loaded {model_name}.pth")
+      else:
+            print("model not define, loading new model")
       return model
 
 def train_model(dataloader, model):
-      optimizer = torch.optim.Adam(model.parameters(), lr= 0.001)
+      optimizer = torch.optim.Adam(model.parameters(), lr= 0.002)
       loss_fn = nn.CrossEntropyLoss()
 
       size = len(dataloader.dataset)
@@ -114,7 +125,10 @@ def train_test_model(train_dataloader, test_dataloader,model,epochs):
       print(f"Total Training Time for {epochs} epochs: {train_test_time:.2f} seconds")
       print(f"Average Time per epochs: {train_test_time/epochs} seconds")
 
-
-
-
-      
+def save_model(model, model_name=None):
+      if model_name is not None:
+            save_path = models_folder_path/f"{model_name}.pth"
+      else:
+            save_path = models_folder_path/"default_model.pth"
+      torch.save(model.state_dict(),save_path)
+      print(f"Saved weights to {save_path}")

@@ -8,13 +8,13 @@ numpy
 pandas idk
 """
 import torch
-from CNN import dataloader
-from CNN.dataloader import tomato_class_names
+from CNN import CNNdataloader
+from CNN.CNNdataloader import tomato_class_names
 from CNN import CNNmodel
 
 
-tomato_dataset = dataloader.load_tomato_dataset()
-train_data,test_data,train_loader,test_loader = dataloader.create_train_and_test_dataset(64,tomato_dataset)
+tomato_dataset = CNNdataloader.load_tomato_dataset()
+train_data,test_data,train_loader,test_loader = CNNdataloader.create_train_and_test_dataset(64,tomato_dataset)
 
 
 
@@ -34,14 +34,14 @@ else:
 
 print(f"Number of tomato classes: {len(tomato_dataset.classes)}")
 print(f"Class names: {tomato_dataset.classes}")
-#dataloader.show_random_sample(train_data,tomato_class_names)
+#CNNdataloader.show_random_sample(train_data,tomato_class_names)
 
 '''  
 
 #----------model test ---------------#
 
-sample_model =CNNmodel.init_model()
+classifier_model =CNNmodel.init_model("default_model")
 
-CNNmodel.train_test_model(train_loader,test_loader,sample_model,10)
+CNNmodel.train_test_model(train_loader,test_loader,classifier_model,5)
 
-torch.save(sample_model.state_dict(),"model.pth")
+CNNmodel.save_model(classifier_model,"default_model")
