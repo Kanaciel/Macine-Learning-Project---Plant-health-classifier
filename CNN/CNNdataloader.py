@@ -10,7 +10,6 @@ import random
 #oh the woes of file management
 root_path = Path(__file__).resolve().parent.parent
 plantvillage_data_path = root_path/"Data"/"Tomato Leaves"
-BATCH_SIZE = 32
 
 tomato_class_names = [
     "Bacterial spot",
@@ -41,6 +40,7 @@ def load_tomato_dataset():
 def create_train_and_test_dataset(batch_size,tomato_dataset= None):
       if tomato_dataset is None:
             tomato_dataset = load_tomato_dataset()
+      torch.manual_seed(69)
       train_size = int(0.8* len(tomato_dataset))
       test_size = len(tomato_dataset) - train_size
 
