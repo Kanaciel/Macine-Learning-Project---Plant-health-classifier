@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import time
 from pathlib import Path
+from torchvision import models
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 root_path = Path(__file__).resolve().parent.parent
@@ -14,52 +15,24 @@ models_folder_path = root_path/"Models"
 class Classifier(nn.Module):
       def __init__(self):
             super().__init__()
-            #none distinct stuffs
-            self.flatten = nn.Flatten()
-            self.relu = nn.ReLU()
-            self.maxpool = nn.MaxPool2d(2,2)
-            self.dropout = nn.Dropout1d(0.1)
-            self.dropout2d = nn.Dropout2d(0.1)
-            #distinct stuffs
-            self.conv1a = nn.Conv2d(3,32,3,1,1)
-            self.conv1b = nn.Conv2d(32,32,3,1,1)
-            self.bn1 = nn.BatchNorm2d(32)
-            
-            self.conv2a = nn.Conv2d(32,64,3,1,1)
-            self.conv2b = nn.Conv2d(64,64,3,1,1)
-            self.bn2 = nn.BatchNorm2d(64)
+            self.base_model = models.efficientnet_b0(weights = models.EfficientNet_B0_Weights.DEFAULT)
 
-            self.conv3a = nn.Conv2d(64,128,3,1,1)
-            self.conv3b = nn.Conv2d(128,128,3,1,1)
-            self.bn3 = nn.BatchNorm2d(128)
-            
-            self.conv4a = nn.Conv2d(128,256,3,1,1)
-            self.conv4b = nn.Conv2d(256,256,3,1,1)
-            self.bn4 = nn.BatchNorm2d(256)
+            # Freeze the parameters of the base model
+            for param in self.base_model.parameters():
+                  param.requires_grad = False
 
-            self.conv5a = nn.Conv2d(256,512,3,1,1)
-            self.conv5b = nn.Conv2d(512,512,3,1,1)
-            self.bn5 = nn.BatchNorm2d(512)
+            in_features = self.base_model.classifier[1].in_features
 
-
-            self.fc1 = nn.Linear(512*8*8,512)
-            self.fc2 = nn.Linear(512,256)
-            self.fc3 = nn.Linear(256,10)
-
+            self.base_model.classifier = nn.Sequential(
+                  nn.Dropout(p=0.2,inplace=True),
+                  nn.Linear(in_features,512),
+                  nn.ReLU(),
+                  nn.Linear(512,10)
+            )
 
       def forward(self, x):
-            x = self.maxpool(self.relu(self.bn1(self.conv1b(self.conv1a(x)))))
-            x = self.maxpool(self.relu(self.bn2(self.conv2b(self.conv2a(x)))))
-            x = self.maxpool(self.relu(self.bn3(self.conv3b(self.conv3a(x)))))
-            x = self.maxpool(self.relu(self.bn4(self.conv4b(self.conv4a(x)))))
-            x = self.maxpool(self.relu(self.bn5(self.conv5b(self.conv5a(x)))))
-            
-            x = self.flatten(x)
-            x = self.relu(self.fc1(x))
-            x = self.dropout(x)
-            x = self.relu(self.fc2(x))
-            x = self.fc3(x)
-            return x
+
+            return self.base_model(x)
             
 
 def init_model(model_name = None):

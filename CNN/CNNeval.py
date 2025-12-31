@@ -3,6 +3,7 @@ from pathlib import Path
 from torch.utils.data import DataLoader
 from PIL import Image
 from .CNNdataloader import trans_img_to_tensor, tomato_class_names
+import numpy as np
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -52,3 +53,6 @@ def predict_image_file(model, image_path):
 
       return predicted_label, confidence
 
+def get_confusion_matrix(mode, dataset):
+      print("fuck you")
+      #predicted_labels_index[]

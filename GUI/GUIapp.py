@@ -1,5 +1,8 @@
 import customtkinter as ctk
 from PIL import Image
+import GUItest
+
+
 
 class App(ctk.CTk):
     def __init__(self):
@@ -7,8 +10,20 @@ class App(ctk.CTk):
         self.title("uhhhhhhhhhh")
         self.geometry("800x600")      
         
-        self.frame = menu_frame(master =self)
-        self.frame.pack(fill="both", expand=True)
+        self.frames = {
+            "menu": menu_frame(self),
+            # "train": training_frame(self),       # To be implemented
+            "predict": GUItest.predict_image_frame(self)   # To be implemented
+        }
+        
+        self.current_frame = self.frames["menu"]
+        self.current_frame.pack(fill="both", expand=True)
+
+    def show_frame(self, frame_name):
+        self.current_frame.pack_forget()
+        self.current_frame = self.frames[frame_name]
+        self.current_frame.pack(fill="both", expand=True)
+
 
 
 
@@ -32,33 +47,25 @@ class menu_frame(ctk.CTkFrame):
                              pady=20, 
                              sticky="nsew")
 
-        self.btn_opt1 = ctk.CTkButton(self, 
+        self.train_btn = ctk.CTkButton(self, 
                                       text="Train Model", 
                                       font= ctk.CTkFont("Minecraftia", size= 30), 
                                       fg_color="transparent", 
-                                      hover_color="#3A3A3A" )
-        self.btn_opt1.grid(row = 4,
+                                      hover_color="#3A3A3A",
+                                       command=lambda: master.show_frame("train") )
+        self.train_btn.grid(row = 4,
                             column = 0,
                             columnspan = 10 )
 
-        self.btn_opt2 = ctk.CTkButton(self, 
-                                      text="Test Model", 
-                                      font= ctk.CTkFont("Minecraftia", size= 30), 
-                                      fg_color="transparent", 
-                                      hover_color="#3A3A3A" )
-        self.btn_opt2.grid(row = 6,
+        self.test_btn = ctk.CTkButton(self, 
+                                    text="Test Model", 
+                                    font= ctk.CTkFont("Minecraftia", size= 30), 
+                                    fg_color="transparent", 
+                                    hover_color="#3A3A3A",
+                                    command=lambda: master.show_frame("predict") )
+        self.test_btn.grid(row = 6,
                             column = 0,
                             columnspan = 10)
-
-
-class predict_image_frame(ctk.CTkFrame):
-    def __init__(self,master):
-        super().__init__(master)
-
-        for i in range(10):
-            self.grid_rowconfigure(i, weight=1)
-            self.grid_columnconfigure(i, weight=1)
-    
 
 
 
