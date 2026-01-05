@@ -1,23 +1,30 @@
 import customtkinter as ctk
 from PIL import Image
-import GUItest
+import GUItest, GUItrain, GUIeval
 
 
 
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("uhhhhhhhhhh")
-        self.geometry("800x600")      
-        
+        self.title("Armored Core 7: Electrosphere")
+        self.geometry("900x600")
+        self.after(100, self.maximize)
+    
         self.frames = {
             "menu": menu_frame(self),
-            # "train": training_frame(self),       # To be implemented
-            "predict": GUItest.predict_image_frame(self)   # To be implemented
+            "train": GUItrain.training_frame(self),       # To be implemented
+            "predict": GUItest.predict_image_frame(self),
+            "eval" : GUIeval.eval_frame(self) #To be implemented
+
         }
         
         self.current_frame = self.frames["menu"]
         self.current_frame.pack(fill="both", expand=True)
+
+    def maximize(self):
+        self.state("zoomed")
+     
 
     def show_frame(self, frame_name):
         self.current_frame.pack_forget()
@@ -67,6 +74,16 @@ class menu_frame(ctk.CTkFrame):
                             column = 0,
                             columnspan = 10)
 
+        # Added Statistic button
+        self.statistic_btn = ctk.CTkButton(self, 
+                                           text="Statistic", 
+                                           font= ctk.CTkFont("Minecraftia", size= 30), 
+                                           fg_color="transparent", 
+                                           hover_color="#3A3A3A",
+                                           command=lambda: master.show_frame("eval") )
+        self.statistic_btn.grid(row = 8,
+                                 column = 0,
+                                 columnspan = 10)
 
 
 app =App()

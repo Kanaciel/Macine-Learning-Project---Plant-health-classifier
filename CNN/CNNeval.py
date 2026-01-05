@@ -18,7 +18,7 @@ def predict_image(model, image_tensor):
 
             return prediction #raw preds valuz
             
-
+#get accuracy as percentage
 def check_accuracy_from_dataset(model,dataset, batch_size =64):
       model.eval()
       loader = DataLoader(dataset, batch_size=batch_size, shuffle= False)
@@ -30,7 +30,7 @@ def check_accuracy_from_dataset(model,dataset, batch_size =64):
                   predictions = predict_image(model ,images)
                   predicted_labels = predictions.argmax(dim=1)
 
-                  correct_guesses += (predicted_labels == labels.to(device)).sum().item()
+                  correct_guesses += (predicted_labels == labels.to(device)).type(torch.float).sum().item()
                   total_guesses += labels.size(0)
 
       accuracy =  (correct_guesses/total_guesses)*100
@@ -53,6 +53,58 @@ def predict_image_file(model, image_path):
 
       return predicted_label, confidence
 
-def get_confusion_matrix(mode, dataset):
-      print("fuck you")
-      #predicted_labels_index[]
+def get_confusion_matrix(model, dataset, batch_size=64):
+
+      model.eval()
+      loader = DataLoader(dataset, batch_size=batch_size, shuffle= False)
+
+      num_classes = len(tomato_class_names)
+
+      confusion_matrix = torch.zeros(num_classes,num_classes,dtype=torch.int64)
+
+      with torch.no_grad():
+            for images, labels in loader:
+                  images, labels = images.to(device), labels.to(device)
+
+                  predictions = predict_image(model,images)
+                  predicted_labels = predictions.argmax(1)
+
+
+                  #flatten the labels to 1d 
+                  true_labels = labels.view(-1)
+                  pred_labels = predicted_labels.view(-1)
+
+                  for i in range(len(true_labels)):
+                        true_class = true_labels[i]
+                        pred_class = pred_labels[i]
+
+                        confusion_matrix[true_class,pred_class] +=1
+      
+      return confusion_matrix
+
+
+def get_F1_score(model, dataset, batch_size=64):
+      confusion_matrix = get_confusion_matrix(model, dataset,batch_size)
+
+      num_classes = len(tomato_class_names)
+
+      F1_scores = {}
+
+      for i in range(num_classes):
+
+            TP = confusion_matrix[i,i].item()
+            FP = 0
+            FN = 0
+            for j in range(num_classes):
+                  if i != j:
+                        FP += confusion_matrix[j,i].item()
+                        FN +=confusion_matrix[i,j].item()
+
+            precision = TP/(TP+FP)
+            recall = TP/(TP+FN)
+
+            F1= (2*precision*recall)/(precision+recall)
+            F1_scores[tomato_class_names[i]] =F1
+
+      return F1_scores
+

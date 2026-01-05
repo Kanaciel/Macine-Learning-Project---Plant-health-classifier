@@ -17,7 +17,7 @@ class Classifier(nn.Module):
             super().__init__()
             self.base_model = models.efficientnet_b0(weights = models.EfficientNet_B0_Weights.DEFAULT)
 
-            # Freeze the parameters of the base model
+            #freeze the parameters of the base model
             for param in self.base_model.parameters():
                   param.requires_grad = False
 

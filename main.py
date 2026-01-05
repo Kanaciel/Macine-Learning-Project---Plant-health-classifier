@@ -45,13 +45,16 @@ print(f"Class names: {tomato_dataset.classes}")
 
 classifier_model =CNNmodel.init_model("default model")
 
-input_prompt =f"\nselect [1] to train model\nselect [2] to test the model with random image\n"
+input_prompt =f"\nselect [1] to train model\nselect [2] to test model\n"
 prompt =int(input(input_prompt))
 if prompt ==1:    
-    CNNmodel.train_test_model(train_loader,test_loader,classifier_model,20, 0.0005)
+    CNNmodel.train_test_model(train_loader,test_loader,classifier_model,30, 0.0005)
     CNNmodel.save_model(classifier_model,"default model")
 elif prompt == 2:
     accuracy = CNNeval.check_accuracy_from_dataset(classifier_model,test_data)
     print(f"accuracy of model is {accuracy:.2f}%")
+
+    f1= CNNeval.get_F1_score(classifier_model,test_data,64)
+    print(f"the F1 score is {f1}")
 
     

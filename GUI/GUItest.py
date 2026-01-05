@@ -1,37 +1,42 @@
 import sys
-import os
+from pathlib import Path
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import customtkinter as ctk
 from customtkinter import filedialog
 from PIL import Image
 from CNN import CNNdataloader, CNNmodel, CNNeval
 
+row_count = 2
+column_count = 1
 
 class predict_image_frame(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
         self.master = master
         
-        for i in range(2):
+
+
+        for i in range(row_count):
             self.grid_rowconfigure(i, weight=1)
-        for i in range(1):
+        for i in range(column_count):
             self.grid_columnconfigure(i, weight=1)
 
 
         top_frame = ctk.CTkFrame(self)
-        top_frame.grid(row=0, column=0, padx=10, pady=10, sticky="ew")
+        top_frame.grid(row=0, column=0, padx=10, pady=10, sticky="ew",columnspan = column_count )
+        
 
-        self.back_button = ctk.CTkButton(top_frame, text="Back to Menu", command=lambda: master.show_frame("menu"))
-        self.back_button.pack(side="left", padx=10, pady=5)
+        self.back_button = ctk.CTkButton(top_frame, text="Back to Menu", font=("Minecraftia", 20),command=lambda: master.show_frame("menu"))
+        self.back_button.pack(side="left", padx=10, pady=10)
 
-        self.upload_button = ctk.CTkButton(top_frame, text="Upload Image", command=self.upload_and_predict)
-        self.upload_button.pack(side="right", padx=10, pady=5)
+        self.upload_button = ctk.CTkButton(top_frame, text="Upload Image", font=("Minecraftia", 20),command=self.upload_and_predict)
+        self.upload_button.pack(side="right", padx=10, pady=10)
         
   
         self.image_label = ctk.CTkLabel(self, text="Upload an image", font=("Minecraftia", 16))
-        self.image_label.grid(row=1, column=0, padx=20, pady=20, sticky="nsew")
+        self.image_label.grid(row=1, column=0, padx=20, pady=20, sticky="nsew", columnspan = column_count)
 
       
         self.result_label = ctk.CTkLabel(self, text="", font=("Minecraftia", 20, "bold"))
@@ -48,7 +53,7 @@ class predict_image_frame(ctk.CTkFrame):
         if not image_path:
             return
 
-     #show imgs idk aughhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+     #show imgs idk 
         try:
             pil_image = Image.open(image_path)
             ctk_image = ctk.CTkImage(light_image=pil_image, dark_image=pil_image, size=(400, 400))
