@@ -86,5 +86,7 @@ class menu_frame(ctk.CTkFrame):
                                  columnspan = 10)
 
 
-app =App()
-app.mainloop()
+
+def init_App():
+    app = App()
+    app.mainloop()

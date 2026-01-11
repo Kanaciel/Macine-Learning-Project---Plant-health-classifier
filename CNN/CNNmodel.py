@@ -113,7 +113,7 @@ def test_model(dataloader,model):
       return
 
 
-def train_test_model(train_dataloader, test_dataloader,model,epochs, learning_rate =0.002):
+def train_test_model(train_dataloader, test_dataloader,model,epochs=10, learning_rate =0.001):
       start_time = time.time()
       for epoch in range(epochs):
             train_model(train_dataloader, model, learning_rate)

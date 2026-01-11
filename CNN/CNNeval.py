@@ -4,6 +4,8 @@ from torch.utils.data import DataLoader
 from PIL import Image
 from .CNNdataloader import trans_img_to_tensor, tomato_class_names
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -108,3 +110,18 @@ def get_F1_score(model, dataset, batch_size=64):
 
       return F1_scores
 
+def display_confusion_matrix(confusion_matrix):
+      fig, ax = plt.subplots(figsize=(8, 6), dpi=100)
+
+      sns.heatmap(confusion_matrix, annot=True, fmt='d', cmap='Blues', ax=ax, 
+            xticklabels=tomato_class_names, 
+            yticklabels=tomato_class_names)
+        
+      ax.set_title("Confusion Matrix", fontsize=16)
+      ax.set_xlabel("Predicted Labels", fontsize=12)
+      ax.set_ylabel("True Labels", fontsize=12)
+
+      plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+      plt.tight_layout()
+
+      plt.show()

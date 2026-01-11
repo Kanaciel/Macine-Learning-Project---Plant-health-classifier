@@ -1,0 +1,34 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Fira Code Demo \PYGZhy{} Python}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{():}
+    \PYG{c+c1}{\PYGZsh{} Common operators }
+    \PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{10}
+    \PYG{n}{b} \PYG{o}{=} \PYG{l+m+mi}{20}
+    \PYG{k}{if} \PYG{n}{a} \PYG{o}{\PYGZlt{}} \PYG{n}{b} \PYG{o+ow}{and} \PYG{n}{a} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}a is less than b\PYGZdq{}}\PYG{p}{)}
+    
+    \PYG{c+c1}{\PYGZsh{} Comparisons}
+    \PYG{n}{x} \PYG{o}{=} \PYG{p}{(}\PYG{n}{a} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{5}\PYG{p}{)} \PYG{o+ow}{and} \PYG{p}{(}\PYG{n}{b} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{30}\PYG{p}{)}
+    
+    \PYG{c+c1}{\PYGZsh{} Walrus operator}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{value} \PYG{o}{:=} \PYG{n}{get\PYGZus{}data}\PYG{p}{())} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n}{process}\PYG{p}{(}\PYG{n}{value}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Lambda with arrow}
+    \PYG{n}{scale} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{z}\PYG{p}{:} \PYG{n}{z} \PYG{o}{*} \PYG{l+m+mi}{2}
+
+    \PYG{c+c1}{\PYGZsh{} Bitwise operations}
+    \PYG{n}{flag} \PYG{o}{=} \PYG{n}{a} \PYG{o}{\PYGZam{}} \PYG{n}{b} \PYG{o}{|} \PYG{p}{(}\PYG{n}{a} \PYG{o}{\PYGZca{}} \PYG{n}{b}\PYG{p}{)}
+    \PYG{n}{shift} \PYG{o}{=} \PYG{n}{a} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{2} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{1}
+
+    \PYG{k}{return} \PYG{n}{flag}\PYG{p}{,} \PYG{n}{shift}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{get\PYGZus{}data}\PYG{p}{():}
+    \PYG{k}{return} \PYG{l+s+s2}{\PYGZdq{}Simulated data\PYGZdq{}}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{process}\PYG{p}{(}\PYG{n}{data}\PYG{p}{):}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Processing: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{data}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{main}\PYG{p}{()}
+\end{MintedVerbatim}

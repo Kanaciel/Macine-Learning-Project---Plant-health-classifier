@@ -1,0 +1,8 @@
+tlmgr install 
+latex-bin latex-base latex-tools latex-graphics 
+etoolbox ragged2e mdframed xifthen adjustbox balance 
+fontawesome firamono fira stix2-type1 
+here float colortbl booktabs tcolorbox geometry xcolor 
+xurl hyperref cleveref bookmark enumitem footmisc fancyhdr lastpage lettrine 
+titlesec authblk caption subcaption listings 
+csquotes biblatex biber
