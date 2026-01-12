@@ -6,23 +6,23 @@ matplotlib
 numpy
 pandas idk
 customtkinter
-pygame audio
 pytorch gradcam
 """
 import torch
-from CNN import CNNdataloader
+from CNN import CNNdataloader,CNNmodel,CNNeval
 from CNN.CNNdataloader import tomato_class_names
-from CNN import CNNmodel
-from CNN import CNNeval
+from GUI import GUIapp, GUItrain, GUItest, GUIeval
 
 
-tomato_dataset = CNNdataloader.load_tomato_dataset()
-train_data,test_data,train_loader,test_loader = CNNdataloader.create_train_and_test_dataset(64,tomato_dataset)
+
 
 
 
 #-----------datload test-----------#
 '''
+tomato_dataset = CNNdataloader.load_tomato_dataset()
+train_data,test_data,train_loader,test_loader = CNNdataloader.create_train_and_test_dataset(64,tomato_dataset)
+
 class_to_idx = tomato_dataset.class_to_idx
 dataset_class_names = [name for name, index in sorted(class_to_idx.items(), key=lambda item: item[1])]
 
@@ -39,9 +39,15 @@ print(f"Number of tomato classes: {len(tomato_dataset.classes)}")
 print(f"Class names: {tomato_dataset.classes}")
 #CNNdataloader.show_random_sample(train_data,tomato_class_names)
 
-'''  
+#'''  
 
-#----------model test ---------------#
+
+#----------  CLI test ---------------#
+
+"""
+
+tomato_dataset = CNNdataloader.load_tomato_dataset()
+train_data,test_data,train_loader,test_loader = CNNdataloader.create_train_and_test_dataset(64,tomato_dataset)
 
 classifier_model =CNNmodel.init_model("default model")
 
@@ -61,3 +67,15 @@ elif prompt == 2:
     confusion_matrix = CNNeval.get_confusion_matrix(classifier_model,test_data,64)
     CNNeval.display_confusion_matrix(confusion_matrix)
     
+
+"""
+
+
+#------------------ GUI test -----------------------#
+
+#"""
+
+GUIapp.Init_App()
+
+
+#"""

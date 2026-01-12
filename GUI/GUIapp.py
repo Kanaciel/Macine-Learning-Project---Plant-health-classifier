@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image
-import GUItest, GUItrain, GUIeval
+from . import GUItest, GUItrain, GUIeval
 
 
 
@@ -87,6 +87,6 @@ class menu_frame(ctk.CTkFrame):
 
 
 
-def init_App():
+def Init_App():
     app = App()
     app.mainloop()

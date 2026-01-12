@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber main"] 1768146760.14076 "main.bcf" "main.bbl" "main" 1768146785.65677 0
-  "main.bcf" 1768146785 108304 5dde6f8e427f03ad3fe93f860ab4e0c7 "pdflatex"
+["biber main"] 1768146760.14076 "main.bcf" "main.bbl" "main" 1768243831.89288 0
+  "main.bcf" 1768243831 108304 5dde6f8e427f03ad3fe93f860ab4e0c7 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1768146782.61789 "d:/class VGU edition/Machine learning/Project/Report/main.tex" "main.pdf" "main" 1768146785.65745 0
+["pdflatex"] 1768243826.32997 "d:/class VGU edition/Machine learning/Project/Report/main.tex" "main.pdf" "main" 1768243831.89369 0
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d4q673.enc" 1768133338 2978 6d777d1174162fa94ff58f36782f4570 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc" 1768133338 3071 cfa92ee28d698dd9275559d9d1c3a233 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc" 1768133497 7007 7bfc8f72039f2cce6ca911c3c71db584 ""
@@ -35,7 +35,6 @@
   "d:/Software/texlive/2025/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text-italic.tfm" 1768133497 30900 0903f6d37c44d064d62d9c928b7560fc ""
   "d:/Software/texlive/2025/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2text.tfm" 1768133497 28540 097ba14dab39294b86bfe4de12d2fe0b ""
   "d:/Software/texlive/2025/texmf-dist/fonts/tfm/public/stix2-type1/t1-stix2textsc.tfm" 1768133497 28348 81425d9b56ec860c57b0a461ce328cb2 ""
-  "d:/Software/texlive/2025/texmf-dist/fonts/tfm/public/stix2-type1/ts1-stix2text.tfm" 1768133497 1460 ab4098db9455eb1e01cadc3c0fc30c5f ""
   "d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraMono-Regular.pfb" 1768133339 192962 677a511de49a461a6e76d8993cb33c92 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb" 1768133339 485112 717f0d077ea28c45f160df3e290fdec1 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Italic.pfb" 1768133339 461495 69f38bdfac48f32c7a0f5bd4d56abf32 ""
@@ -262,7 +261,6 @@
   "d:/Software/texlive/2025/texmf-dist/tex/latex/stix2-type1/ls2stix2tt.fd" 1768133497 1650 bfd4c7fbfec9027203a2a6f1dcdc0b26 ""
   "d:/Software/texlive/2025/texmf-dist/tex/latex/stix2-type1/stix2.sty" 1768133497 127573 0916e5dc57dc4570f53b7ad47c3008e8 ""
   "d:/Software/texlive/2025/texmf-dist/tex/latex/stix2-type1/t1stix2.fd" 1768133497 2217 7e5caa291508cddad61b556f7059541a ""
-  "d:/Software/texlive/2025/texmf-dist/tex/latex/stix2-type1/ts1stix2.fd" 1768133497 2236 9514e689bebece9172690330f645f3ba ""
   "d:/Software/texlive/2025/texmf-dist/tex/latex/sttools/stfloats.sty" 1768130540 19135 2044f4970d2ece01df5d5dfacaaaec0f ""
   "d:/Software/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex" 1768130671 34681 5f7ded8db74e73427361503c88aa1d95 ""
   "d:/Software/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex" 1768130671 9105 3c2de34ef77044dd7d6023f6a0cc7008 ""
@@ -304,11 +302,11 @@
   "d:/Software/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768133509 575608 598993ea7e1e7b6fb3ff41b758cc7899 ""
   "d:/Software/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1768132183 3436981 c14d4b73d3830329a902d477cdf68b69 ""
   "d:/Software/texlive/2025/texmf.cnf" 1768131984 713 614551405fc44b98efbf516466e3c909 ""
-  "d:/class VGU edition/Machine learning/Project/Report/main.tex" 1768146782 5484 c214a14143dee1deadd8f83053903977 ""
-  "main.aux" 1768146785 2272 3d3919760a8255b684a4edecf4b22a59 "pdflatex"
+  "d:/class VGU edition/Machine learning/Project/Report/main.tex" 1768243825 5496 1ebab8bfd73b609b022e8636036e3ad3 ""
+  "main.aux" 1768243831 2646 b0068962cd31254e8ddccccea1adf135 "pdflatex"
   "main.bbl" 1768146765 486 76d65a242ec496c9b4361af646ff12cb "biber main"
-  "main.run.xml" 1768146785 2367 a824c96d47a069a0d2c99a0d837f536d "pdflatex"
-  "main.tex" 1768146782 5484 c214a14143dee1deadd8f83053903977 ""
+  "main.run.xml" 1768243831 2367 a824c96d47a069a0d2c99a0d837f536d "pdflatex"
+  "main.tex" 1768243825 5496 1ebab8bfd73b609b022e8636036e3ad3 ""
   "tau-class/tau.cls" 1768052576 16665 031e6412c6f0553f7b5e03811f71d8e3 ""
   "tau-class/taubabel.sty" 1768052576 3672 1ef12c3a95220b69aa6ab01dd68fcd33 ""
   "tau-class/tauenvs.sty" 1768052576 2831 e86de0317572edc6f1be19b58a727dd1 ""
