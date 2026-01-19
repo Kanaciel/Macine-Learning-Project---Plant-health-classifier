@@ -38,6 +38,8 @@ def check_accuracy_from_dataset(model,dataset, batch_size =64):
       accuracy =  (correct_guesses/total_guesses)*100
       return accuracy
 
+
+
 def predict_image_file(model, image_path):
       model.eval()
       image_path = Path(image_path)
@@ -85,11 +87,16 @@ def get_confusion_matrix(model, dataset, batch_size=64):
       return confusion_matrix
 
 
-def get_F1_score(model, dataset, batch_size=64):
-      confusion_matrix = get_confusion_matrix(model, dataset,batch_size)
+def get_F1_score(model, dataset,confusion_matrix = None,batch_size=64):
+      if confusion_matrix == None:
+            confusion_matrix = get_confusion_matrix(model, dataset,batch_size)
 
       num_classes = len(tomato_class_names)
 
+      total_samples = confusion_matrix.sum().item()
+      precisions= {}
+      recalls = {}
+      #per_class_accs = {}
       F1_scores = {}
 
       for i in range(num_classes):
@@ -102,28 +109,48 @@ def get_F1_score(model, dataset, batch_size=64):
                         FP += confusion_matrix[j,i].item()
                         FN +=confusion_matrix[i,j].item()
 
+            
             precision = TP/(TP+FP)
             recall = TP/(TP+FN)
+
+            precisions[tomato_class_names[i]] = precision
+            recalls[tomato_class_names[i]] = recall
+
 
             F1= (2*precision*recall)/(precision+recall)
             F1_scores[tomato_class_names[i]] =F1
 
-      return F1_scores
+      return F1_scores,precisions,recalls
+
 
 def display_confusion_matrix(confusion_matrix):
+
+      tomato_class_names_abbreviated = [
+      "Bacterial spot",
+      "Early blight",
+      "Late blight",
+      "Leaf Mold",
+      "Septoria",
+      "Spider mites ",
+      "Target Spot",
+      "Yellow Curl",
+      "mosaic virus",
+      "healthy"
+      ]
+
       fig, ax = plt.subplots(figsize=(8, 6), dpi=100)
 
       sns.heatmap(confusion_matrix, annot=True, fmt='d', cmap='Blues', ax=ax, 
-            xticklabels=tomato_class_names, 
-            yticklabels=tomato_class_names)
+            xticklabels=tomato_class_names_abbreviated, 
+            yticklabels=tomato_class_names_abbreviated)
         
       ax.set_title("Confusion Matrix", fontsize=16)
-      ax.set_xlabel("Predicted Labels", fontsize=12)
-      ax.set_ylabel("True Labels", fontsize=12)
+      ax.set_xlabel("Predicted Labels", fontsize=10)
+      ax.set_ylabel("True Labels", fontsize=10)
 
-      plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+      plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor", fontsize=8)
+      plt.setp(ax.get_yticklabels(), fontsize=8)
       plt.tight_layout()
 
       plt.show()
 
-      

@@ -254,35 +254,45 @@
 % Keyword text font 
 \newcommand{\keywordsfonttext}{\selectfont\itshape\sffamily\small}
 
-% Abstract definition
-\def\xabstract{abstract}
-\long\def\abstract#1\end#2{\def\two{#2}\ifx\two\xabstract 
-    \long\gdef\theabstract{\ignorespaces#1}
-    \def\go{\end{abstract}}
-\else
-    #1\end{#2}
-    \gdef\theabstract{\vskip12pt
-    \vskip12pt}
-    \let\go\relax\fi
-\go}
+% ---------------------------
+% Abstract storage
+% ---------------------------
+\newcommand{\theabstract}{} % initially empty
 
-\newcommand{\tauabstract}{
-    \noindent
-    \parbox{\dimexpr\linewidth}{
-	\vskip3pt
-        \hspace*{1em}{\absfont\abstractname---}\abstextfont\theabstract
-    }
-    \@ifundefined{@keywords}{\vskip0pt}{
-        \vskip5pt
-        \noindent
-        \parbox{\dimexpr\linewidth}{
-    	{
-            \hspace*{1em}{\keywordsfont\keywordname\ignorespaces}{\keywordsfonttext\@keywords}
-    	}
-        }
-        \vskip5pt
-    } 
+% Redefine abstract environment
+\renewenvironment{abstract}{%
+    \collect@body\store@abstract
+}{}
+
+\long\def\store@abstract#1{%
+    % Remove leading/trailing spaces
+    \def\theabstract{\unskip#1\unskip}%
 }
+
+% Robust printing
+\newcommand{\tauabstract}{%
+    \if\relax\detokenize\expandafter{\theabstract}\relax
+        % do nothing if abstract empty
+    \else
+        \noindent
+        \parbox{\dimexpr\linewidth}{%
+            \vskip3pt
+            \hspace*{1em}{\absfont\abstractname---}\abstextfont\theabstract
+        }%
+        \@ifundefined{@keywords}{\vskip0pt}{%
+            \vskip5pt
+            \noindent
+            \parbox{\dimexpr\linewidth}{%
+                {%
+                    \hspace*{1em}{\keywordsfont\keywordname\ignorespaces}%
+                    {\keywordsfonttext\@keywords}%
+                }%
+            }%
+            \vskip5pt
+        }%
+    \fi
+}
+
 
 %----------------------------------------------------------
 % Title style

@@ -60,11 +60,13 @@ if prompt ==1:
 elif prompt == 2:
     accuracy = CNNeval.check_accuracy_from_dataset(classifier_model,test_data)
     print(f"accuracy of model is {accuracy:.2f}%")
-
-    f1= CNNeval.get_F1_score(classifier_model,test_data,64)
-    print(f"the F1 score is {f1}")
-
     confusion_matrix = CNNeval.get_confusion_matrix(classifier_model,test_data,64)
+    f1,precision, recall= CNNeval.get_F1_score(classifier_model,test_data,confusion_matrix,64)
+    print(f"the F1 score is {f1}")
+    print(f"the precision is {f1}")
+    print(f"the recalls are {f1}")
+
+    
     CNNeval.display_confusion_matrix(confusion_matrix)
     
 

@@ -22,8 +22,9 @@
 % --------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[10pt,a4paper,twocolumn,twoside]{tau-class/tau}
+\documentclass[8pt,a4paper,twocolumn,twoside]{tau-class/tau}
 \usepackage[english]{babel}
+
 
 % Spanish babel recomendation
 % \usepackage[spanish,es-nodecimaldot,es-noindentfirst]{babel} 
@@ -32,8 +33,8 @@
 % Title & Authors/Affiliations
 %----------------------------------------------------------
 
-\doctype{Armored Core 6: The Unsung War}
-\title{How to use the Light Bowgun: From the perspective of an AC player}
+\doctype{Machine Learning Project}
+\title{Tomato Diseases Classification via Convolutional Network}
 
 %----------------------------------------------------------
 
@@ -42,18 +43,18 @@
 
 %----------------------------------------------------------
 
-\affil[1]{\href{mailto:10223030@student.vgu.edu.vn}{10223030@student.vgu.edu.vn} -  Line Ark Whiteglint}
+%\affil[1]{\href{mailto:10223030@student.vgu.edu.vn}{10223030@student.vgu.edu.vn} -  Line Ark Whiteglint}
 
 %----------------------------------------------------------
 % Document-, Footer- information
 %----------------------------------------------------------
 
-\dates{This manuscript was compiled on \today}
+%\dates{This manuscript was compiled on \today}
 \docinfo{} 
 
 %----------------------------------------------------------
 
-\footinfo{}
+\footinfo{\href{https://github.com/Kanaciel/Macine-Learning-Project---Plant-health-classifier}{Plant Health Classifier Project}}
 \theday{\today}
 \organization{Raven Nest}
 \leadauthor{}
@@ -62,54 +63,120 @@
 % ABSTRACT AND KEYWORDS
 %----------------------------------------------------------
 
-\begin{abstract}    
-    Tau-class was designed for creating professional \LaTeX{} documents,
-     including research articles, technical reports, and academic documentation. 
-     It enhances the writing experience through intuitive custom environments, multilingual support, and refined typography.
-      The class integrates Fira Sans for headings and highlighted elements, Fira Mono for code listings, and STIX2 for body text, ensuring consistent styling across tables, figures, equations, listings, and captions. 
-      \textit{New or updated features are marked with an asterisk (*)}.
+
+\begin{abstract}
 \end{abstract}
 
-    % Tau ($\tau$) is a specially designed document class for creating professional and well-structured research articles, technical reports, and academic documentation. Tau enhances the writing experience through intuitive custom environments, multilingual support, and refined typography powered by Fira Sans for headings and distinctive elements, Fira Modo for listings, and STIX2 for body text, providing consistent and professional styling for elements such as tables, figures, equations, code listings, and captions. \textit{New/Updated features will show a (*) in their title.}
 
 %----------------------------------------------------------
 
-\keywords{tau-class, research article, lab report, academic writing}
-
+%\keywords{Armored Core, Ace Combat, Monster Hunter, Warhammer 40K} 
 %----------------------------------------------------------
 
 \begin{document}
-		
-    \maketitle 
-    \thispagestyle{firststyle}
-    
+
+
+
+\maketitle
+\thispagestyle{firststyle}
+
 %----------------------------------------------------------
 
 \section{Introduction}
 
-    \taustart{I}t is the 41st Millennium. For more than a hundred centuries The \inlinecode{Emperor} has sat immobile on the Golden Throne of Earth. He is the Master of Mankind by the will of the gods, and master of a million worlds by the might of his inexhaustible armies. He is a rotting carcass writhing invisibly with power from the Dark Age of Technology. He is the Carrion Lord of the Imperium for whom a thousand souls are sacrificed every day, so that he may never truly die.
+\taustart{A}griculture plays a major role in society, providing food and jobs for a large portion of the populations, contributing to the global economy.However, diseases present a major challenge to farmers, not only harming the plant but also spreading to the crops surrounding it. Therefore, it is vital to monitor and respond quickly to plant diseases. Due to the increasing sizes of farms, it is not feasible to manually monitor every plants. Automated system must be employed to ensure effective responses. 
 
-Yet even in his deathless state, the \inlinecode{Emperor} continues his eternal vigilance. Mighty battlefleets cross the daemon-infested miasma of the Warp, the only route between distant stars, their way lit by the Astronomican, the psychic manifestation of the Emperor's will. Vast armies give battle in his name on uncounted worlds. Greatest amongst his soldiers are the Adeptus Astartes, the Space Marines, bio-engineered super-warriors. Their comrades in arms are legion: the Imperial Guard and countless planetary defence forces, the ever vigilant Inquisition and the tech-priests of the Adeptus Mechanicus to name only a few. But for all their multitudes, they are barely enough to hold off the ever-present threat from aliens, heretics, mutants - and worse.
+This project aims to present a solution to detect disease on a plant, in this case the tomato, based on image of its leaf. Using neural networks and transfer learning, we can extract the features from an image and from there classify based on ten classes.
 
-To be a man in such times is to be one amongst untold billions. It is to live in the cruelest and most bloody regime imaginable. These are the tales of those times. Forget the power of technology and science, for so much has been forgotten, never to be re-learned. Forget the promise of progress and understanding, for in the grim dark future there is only war. There is no peace amongst the stars, only an eternity of carnage and slaughter, and the laughter of thirsting gods.﻿
 
-	
+
 
 \section{Methodology}
+    	\subsection{Data Acquisition and Processing}
+		Plant Village is a public dataset created by David Hughes and Marcel Salathé, containing 54303 leaf images and divided into 38 categories based on diseases and species in a variety of formats. For this project, the images from the tomato plants will be sufficient. 
+		The tomato dataset contains ten subsets, are in full color, with their original background, at a resolution of $256 \times 256$.
 
+		For the process of processing images and model training, we have chosen Pytorch library for its support of GPU integration on Window, allowing for faster training, and clear, well-maintained documentation.The images are first converted to the correct input size, which is $224 \times 224$, normalize, and converted into a tensor for model input. All of the images are loaded into a dataset and divided into a training and testing data using an 80/20 split.
 
+    	\subsection{Feature Extraction}
+		Feature extraction is performed via convolutional layers. By convolving the image tensors with kernels, we can extract distinct features from the images and create various feature maps. These feature maps are of smaller sizes and therefore are less computationally demanding to process. 
+
+		While initially a custom Convolutional Neural Network(CNN) was  developed, a decision was made to adopt a transfer learning approach, utilizing the pretrained EfficientNetB0 model. EfficientNetB0 is trained upon a much larger and more diverse dataset, allowing for better feature extraction. Furthermore, because EfficientNetB0 is already pre-trained, we can freeze the base layers, allowing for faster training time and preventing overfitting.
+
+	\subsection{Classification}
+
+   		The multi-channel features maps of size $C \times H \times W$ are flattened into 1d vector, which is then passed through a fully connected layer of 512 neurons. The final fully connected layer contains 10 neurons, corresponding to the 10 target classes.
+
+	\subsection{GUI}
+		The GUI is built using the Python CustomTKinter library, allowing the user to train, test the model using user uploaded images, and also see its performance metrics using the test dataset.
 \section{Result}
 
-    \subsection{Confusion Matrix}
+	
+	\tabref{tab:table} shows the performance of the model, including precision, recall, and F1-Score.
+	\begin{table}[H]
+		\caption{Model performance metrics}
+        	
+		\label{tab:table}
+        	\begin{tabular}{
+        		>{\raggedright\arraybackslash}p{0.3\columnwidth}
+        		>{\raggedright\arraybackslash}p{0.18\columnwidth}
+        		>{\raggedright\arraybackslash}p{0.18\columnwidth}
+        		>{\raggedright\arraybackslash}p{0.18\columnwidth}
+        	}
+			\toprule
+			\textbf{Class}                    & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
+			\midrule
+			Bacterial spot 			    & 98.60	\%		 & 98.60 \%		 & 98.60 \%\\
+			Early blight			    & 94.85 \%		 & 94.85 \%		 & 94.85 \%\\
+			Late blight 			    & 98.52  \%		 & 98.52	\%	 & 98.52 \%\\
+			Leaf Mold				    & 98.53	\%	 	 & 98.53	\%	 & 98.53 \%\\
+			Septoria leaf spot		    & 98.22 \%		 & 98.22	\%	 & 98.22 \%\\
+			Spider mites (Two-spotted) 	    & 97.84	\%		 & 97.84 	\%	 & 97.84 \%\\
+			Target Spot 			    & 95.77	\%		 & 95.77	\%	 & 95.77 \%\\
+			Yellow Leaf Curl Virus 		    & 99.54	\%		 & 99.54	\%	 & 99.54 \%\\
+			Mosaic virus			    & 98.57	\%		 & 98.57	\%	 & 98.57 \%\\
+			Healthy 				    & 99.05	\%		 & 99.05	\%	 & 99.05 \%\\
+			\bottomrule
+        	\end{tabular}
+        	
+		
+      \end{table}
+		
+	Overall, the model performed relatively well, achieving an overall accuracy of 98.38\%. This is a marked improvement in comparision to a custom-made CNN model, which averages around 93\% accuracy.
+
+	As shown by the performance metrics table, there is a balance between precision and recall among all disease categories. The "Tomato Yellow Leaf Curl Virus" class achieved the highest F1-Score of 99.54\%, followed closely by "Healthy" 99.05\%. The lowest, yet still satisfactory, F1-Scores were for "Early Blight" and "Target Spot" at 94.85\% and 95.77\% respectively.
+    	
+	\figref{fig:confusion_matrix} shows the confusion matrix of the model. 	
+
+    	\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.9\columnwidth]{figures/confusion_matrix.pdf}
+    		\caption{Confusion Matrix}
+    		\label{fig:confusion_matrix}
+    	\end{figure}
+
+	However. when the model was tested informally on non-dataset image via the GUI, the result is noticeably less consistent. The model produced mixed results, with a drop inaccuracy and confidences when given images taken under real-world conditions. This could suggest that the model is tuned to ideal conditions such as clean background or when only a single leaf shown. Variations in real-world contribute to less reliable predictions.
 
 
-    \subsection{}
 \section{Conclusion}
+	This project has developed a plant health classification using Convolution Neural Network. By implementing a transfer learning approach, feature maps are extracted from images and fed into fully connected layers to classify them as one out of ten possible classes.
+
+	The CNN model yielded strong result, achieving over 98.38\% overall accuracy on the Plant Village dataset. For classifying real images from non-ideal images, the model performs less accurately, possibly due to the variations and noises.
+	
+	By enabling farmers to identify diseases early and accurately using a simple image, it can significantly reduce diagnosis time, leading to more timely interventions. This translates to improved crop yields and a reduction in costs for both farmers and consumers.
+
+	Further developments for this project may be explored:
+	\begin{itemize}
+		\item More diverse and robust data
+		\item Expansion to classifying other plants
+		\item Improvement on the GUI, implementation of threadings and training options
+	\end{itemize}
 
 
-\section{Reference}
 %----------------------------------------------------------
 
+\nocite{*}
+\printbibliography{}
 
 %----------------------------------------------------------
 

@@ -76,7 +76,7 @@ class eval_frame(ctk.CTkFrame):
                   accuracy = CNNeval.check_accuracy_from_dataset(self.model,self.test_data)
                   self.accuracy_label.configure(text=f"Accuracy: {accuracy:.2f}%")
 
-                  f1_scores = CNNeval.get_F1_score(self.model,self.test_data)
+                  f1_scores,_,_ = CNNeval.get_F1_score(self.model,self.test_data)
                   
                   f1_text = ""
                   for class_name, score in f1_scores.items():

@@ -16,5 +16,136 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global/global}
+    \entry{DBLP:journals/corr/HughesS15}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=73548d83308fe701f7b5640229166fa9}{%
+           family={Hughes},
+           familyi={H\bibinitperiod},
+           given={David\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=932172cbce9830fa1763c426c7088452}{%
+           family={Salath{é\bibnamedelimb }},
+           familyi={S\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1616ac82c6d2fd69f8211b67d923a883}
+      \strng{fullhash}{1616ac82c6d2fd69f8211b67d923a883}
+      \strng{fullhashraw}{1616ac82c6d2fd69f8211b67d923a883}
+      \strng{bibnamehash}{1616ac82c6d2fd69f8211b67d923a883}
+      \strng{authorbibnamehash}{1616ac82c6d2fd69f8211b67d923a883}
+      \strng{authornamehash}{1616ac82c6d2fd69f8211b67d923a883}
+      \strng{authorfullhash}{1616ac82c6d2fd69f8211b67d923a883}
+      \strng{authorfullhashraw}{1616ac82c6d2fd69f8211b67d923a883}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{An open access repository of images on plant health to enable the development of mobile disease diagnostics through machine learning and crowdsourcing}
+      \field{volume}{abs/1511.08060}
+      \field{year}{2015}
+      \true{nocite}
+      \verb{eprint}
+      \verb 1511.08060
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1511.08060
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1511.08060
+      \endverb
+    \endentry
+    \entry{tan2020efficientnetrethinkingmodelscaling}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=1e7d6abb8225099acc71f672b9ec336e}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Mingxing},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c636f146591d51579a8119b777394878}{%
+           family={Le},
+           familyi={L\bibinitperiod},
+           given={Quoc\bibnamedelima V.},
+           giveni={Q\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{fullhash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{fullhashraw}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{bibnamehash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{authorbibnamehash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{authornamehash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{authorfullhash}{d029e8131f7a0bef056d7edc726f1529}
+      \strng{authorfullhashraw}{d029e8131f7a0bef056d7edc726f1529}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks}
+      \field{year}{2020}
+      \true{nocite}
+      \verb{eprint}
+      \verb 1905.11946
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1905.11946
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1905.11946
+      \endverb
+    \endentry
+    \entry{pytorch_learn_the_basics_2025}{misc}{}{}
+      \name{author}{5}{}{%
+        {{hash=7fcd1f73d9a52ad49a219a1e25a166ed}{%
+           family={Subramanian},
+           familyi={S\bibinitperiod},
+           given={Suraj},
+           giveni={S\bibinitperiod}}}%
+        {{hash=323334f184033d1d13e457d6bc9ef0c3}{%
+           family={Juarez},
+           familyi={J\bibinitperiod},
+           given={Seth},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a87bbc3a34067821b3c1577774fd278f}{%
+           family={Breviu},
+           familyi={B\bibinitperiod},
+           given={Cassie},
+           giveni={C\bibinitperiod}}}%
+        {{hash=41cf859fa6fc5649b14047a3907894be}{%
+           family={Soshnikov},
+           familyi={S\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod}}}%
+        {{hash=880dcff5c450023f4c8cda653b65494e}{%
+           family={Bornstein},
+           familyi={B\bibinitperiod},
+           given={Ari},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{44fa7a7693eb5362c0317ea122330a99}
+      \strng{fullhash}{7433cba25d157539d2d76325bd06f483}
+      \strng{fullhashraw}{7433cba25d157539d2d76325bd06f483}
+      \strng{bibnamehash}{7433cba25d157539d2d76325bd06f483}
+      \strng{authorbibnamehash}{7433cba25d157539d2d76325bd06f483}
+      \strng{authornamehash}{44fa7a7693eb5362c0317ea122330a99}
+      \strng{authorfullhash}{7433cba25d157539d2d76325bd06f483}
+      \strng{authorfullhashraw}{7433cba25d157539d2d76325bd06f483}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://docs.pytorch.org/tutorials/beginner/basics/intro.html}}
+      \field{title}{Learn the Basics — PyTorch Tutorials}
+      \field{year}{2025}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
