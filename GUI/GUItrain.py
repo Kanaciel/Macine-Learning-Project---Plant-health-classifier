@@ -43,7 +43,7 @@ class training_frame(ctk.CTkFrame):
 
                   self.model =CNNmodel.init_model("default model")
 
-                  CNNmodel.train_test_model(train_loader,test_loader,self.model,1, 0.00005)
+                  CNNmodel.train_test_model(train_loader,test_loader,self.model,5, 0.00005)
                   CNNmodel.save_model(self.model,"default model")
 
                   self.status_label.configure(text=f"Training complete. Model saved as 'default model.pth'")

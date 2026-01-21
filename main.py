@@ -1,12 +1,11 @@
 """
-libraries to get i think
+libraries to get 
 pytorch
 seaborn
 matplotlib
 numpy
-pandas idk
 customtkinter
-pytorch gradcam
+PIL
 """
 import torch
 from CNN import CNNdataloader,CNNmodel,CNNeval
@@ -15,35 +14,8 @@ from GUI import GUIapp, GUItrain, GUItest, GUIeval
 
 
 
-
-
-
-#-----------datload test-----------#
-'''
-tomato_dataset = CNNdataloader.load_tomato_dataset()
-train_data,test_data,train_loader,test_loader = CNNdataloader.create_train_and_test_dataset(64,tomato_dataset)
-
-class_to_idx = tomato_dataset.class_to_idx
-dataset_class_names = [name for name, index in sorted(class_to_idx.items(), key=lambda item: item[1])]
-
-
-if tomato_class_names == dataset_class_names:
-    print("Success: The manually defined 'tomato_class_names' list is correctly aligned with the dataset labels.\n")
-else:
-    print("Error: The 'tomato_class_names' list does not match the order of the dataset labels.\n")
-    print("Manual List:", tomato_class_names)
-    print("Dataset List:", dataset_class_names)
-    
-
-print(f"Number of tomato classes: {len(tomato_dataset.classes)}")
-print(f"Class names: {tomato_dataset.classes}")
-#CNNdataloader.show_random_sample(train_data,tomato_class_names)
-
-#'''  
-
-
 #----------  CLI test ---------------#
-
+#used in case you want to train the model, you can in GUI but it's defaulted to 5 epochs and also the entire GUI freezes
 """
 
 tomato_dataset = CNNdataloader.load_tomato_dataset()
@@ -74,6 +46,8 @@ elif prompt == 2:
 
 
 #------------------ GUI test -----------------------#
+
+# all that you need to run GUI
 
 #"""
 

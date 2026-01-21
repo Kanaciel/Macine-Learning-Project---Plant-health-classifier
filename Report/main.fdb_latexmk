@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1768650940.34346 "main.bcf" "main.bbl" "main" 1768652684.44165 0
-  "main.bcf" 1768652683 108774 05568d2d34984276e21c62e969bb4be7 "pdflatex"
+["biber main"] 1768650940.34346 "main.bcf" "main.bbl" "main" 1768997995.37174 0
+  "main.bcf" 1768997994 108774 05568d2d34984276e21c62e969bb4be7 "pdflatex"
   "tau.bib" 1768650937 1338 9e3d3c80cc5fb04217d3e1ff6ac4f1ac ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1768652680.15956 "d:/class VGU edition/Machine learning/Project/Report/main.tex" "main.pdf" "main" 1768652684.44368 0
+["pdflatex"] 1768997992.09736 "d:/class VGU edition/Machine learning/Project/Report/main.tex" "main.pdf" "main" 1768997995.37264 0
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d4q673.enc" 1768133338 2978 6d777d1174162fa94ff58f36782f4570 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc" 1768133338 3071 cfa92ee28d698dd9275559d9d1c3a233 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc" 1768133497 3416 3b99a05a42a4705ec5a5521d2bffa072 ""
@@ -307,12 +307,12 @@
   "d:/Software/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768133509 575608 598993ea7e1e7b6fb3ff41b758cc7899 ""
   "d:/Software/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1768132183 3436981 c14d4b73d3830329a902d477cdf68b69 ""
   "d:/Software/texlive/2025/texmf.cnf" 1768131984 713 614551405fc44b98efbf516466e3c909 ""
-  "d:/class VGU edition/Machine learning/Project/Report/main.tex" 1768652679 9213 9bde94fb12db2f9bdd511f2309903e79 ""
+  "d:/class VGU edition/Machine learning/Project/Report/main.tex" 1768997991 9270 271f75457cbf36110cbe2a4e866bb6a2 ""
   "figures/confusion_matrix.pdf" 1768334562 20935 48c4cf979247692ce32968b741924611 ""
-  "main.aux" 1768652683 4284 797ad4b6e7710f3e2939dd63b354e185 "pdflatex"
+  "main.aux" 1768997994 4284 797ad4b6e7710f3e2939dd63b354e185 "pdflatex"
   "main.bbl" 1768650943 5905 19feeb687bd57c749311267aea59d9ea "biber main"
-  "main.run.xml" 1768652683 2367 a824c96d47a069a0d2c99a0d837f536d "pdflatex"
-  "main.tex" 1768652679 9213 9bde94fb12db2f9bdd511f2309903e79 ""
+  "main.run.xml" 1768997994 2367 a824c96d47a069a0d2c99a0d837f536d "pdflatex"
+  "main.tex" 1768997991 9270 271f75457cbf36110cbe2a4e866bb6a2 ""
   "tau-class/tau.cls" 1768342373 16974 0f96ad84a5fd68abb12323c421c257ae ""
   "tau-class/taubabel.sty" 1768052576 3672 1ef12c3a95220b69aa6ab01dd68fcd33 ""
   "tau-class/tauenvs.sty" 1768052576 2831 e86de0317572edc6f1be19b58a727dd1 ""

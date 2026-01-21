@@ -38,7 +38,7 @@
 
 %----------------------------------------------------------
 
-\author[1]{Huynh Ngoc Hoang Khang}
+\author[1]{Huynh Ngoc Hoang Khang - 1651678}
 
 
 %----------------------------------------------------------
@@ -54,7 +54,7 @@
 
 %----------------------------------------------------------
 
-\footinfo{\href{https://github.com/Kanaciel/Macine-Learning-Project---Plant-health-classifier}{Plant Health Classifier Project}}
+\footinfo{\href{https://github.com/Kanaciel/Macine-Learning-Project---Plant-health-classifier}{https://github.com/Kanaciel/Macine-Learning-Project---Plant-health-classifier}}
 \theday{\today}
 \organization{Raven Nest}
 \leadauthor{}
@@ -96,7 +96,7 @@ This project aims to present a solution to detect disease on a plant, in this ca
 		Plant Village is a public dataset created by David Hughes and Marcel Salathé, containing 54303 leaf images and divided into 38 categories based on diseases and species in a variety of formats. For this project, the images from the tomato plants will be sufficient. 
 		The tomato dataset contains ten subsets, are in full color, with their original background, at a resolution of $256 \times 256$.
 
-		For the process of processing images and model training, we have chosen Pytorch library for its support of GPU integration on Window, allowing for faster training, and clear, well-maintained documentation.The images are first converted to the correct input size, which is $224 \times 224$, normalize, and converted into a tensor for model input. All of the images are loaded into a dataset and divided into a training and testing data using an 80/20 split.
+		For the process of processing images and model training, we have chosen Pytorch library for its support of GPU integration on Window, allowing for faster training, and clear, well-maintained documentation. The images are first converted to the correct input size, which is $224 \times 224$, normalize, and converted into a tensor for model input. All of the images are loaded into a dataset and divided into a training and testing data using an 80/20 split.
 
     	\subsection{Feature Extraction}
 		Feature extraction is performed via convolutional layers. By convolving the image tensors with kernels, we can extract distinct features from the images and create various feature maps. These feature maps are of smaller sizes and therefore are less computationally demanding to process. 

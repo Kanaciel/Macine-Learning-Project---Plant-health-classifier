@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.11)  17 JAN 2026 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.11)  21 JAN 2026 13:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1703,7 +1703,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 {d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-ts1.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d4q673.enc} <./figures/confusion_matrix.pdf>] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
-runsystem(latexminted cleantemp  --timestamp 20260117132440 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20260121131952 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
 
 (./main.aux)
  ***********
@@ -1717,13 +1717,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  54682 strings out of 468662
  1102843 string characters out of 5441351
- 2095381 words of memory out of 5000000
+ 2095457 words of memory out of 5000000
  82446 multiletter control sequences out of 15000+600000
  833169 words of font info for 180 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  137i,12n,143p,1056b,1754s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraMono-Regular.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/stix2-type1/STIX2Math.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Bold.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb>
-Output written on main.pdf (1 page, 795268 bytes).
+Output written on main.pdf (1 page, 795405 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
