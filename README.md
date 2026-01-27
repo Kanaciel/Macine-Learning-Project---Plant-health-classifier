@@ -26,5 +26,5 @@ The GUI itself is relatively straightforward, just click the button and it will 
 ## Special note
 - The GUI will absolutely freeze up when training or trying to get the confusion matrix, as I have yet to implement threading.
 - In the off chance the GUI is in light mode, the buttons are still there, you would have to hover above them for them to show however. 
-- In case the code, doesnt run, you can download the exe compiled from [this drive here](https://drive.google.com/drive/folders/1NsvnUNYR3UrcMmfSho9Xzy8c686VX-xZ?usp=sharing)
+- In case the code, doesnt run, you can download the exe compiled from [this drive here](https://drive.google.com/drive/folders/1NsvnUNYR3UrcMmfSho9Xzy8c686VX-xZ?usp=sharing), it is however 6GB when unzipped.
 
