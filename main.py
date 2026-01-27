@@ -16,7 +16,7 @@ from GUI import GUIapp, GUItrain, GUItest, GUIeval
 
 #----------  CLI test ---------------#
 #used in case you want to train the model, you can in GUI but it's defaulted to 5 epochs and also the entire GUI freezes
-#"""
+"""
 
 tomato_dataset = CNNdataloader.load_tomato_dataset()
 train_data,test_data,train_loader,test_loader = CNNdataloader.create_train_and_test_dataset(64,tomato_dataset)
@@ -49,7 +49,7 @@ elif prompt == 2:
 
 # all that you need to run GUI
 
-"""
+#"""
 
 GUIapp.Init_App()
 
