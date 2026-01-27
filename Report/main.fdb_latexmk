@@ -1,15 +1,14 @@
 # Fdb version 4
-["biber main"] 1768650940.34346 "main.bcf" "main.bbl" "main" 1768997995.37174 0
-  "main.bcf" 1768997994 108774 05568d2d34984276e21c62e969bb4be7 "pdflatex"
-  "tau.bib" 1768650937 1338 9e3d3c80cc5fb04217d3e1ff6ac4f1ac ""
+["biber main"] 1769442705.61914 "main.bcf" "main.bbl" "main" 1769499896.3509 0
+  "main.bcf" 1769499895 108774 05568d2d34984276e21c62e969bb4be7 "pdflatex"
+  "tau.bib" 1769442702 1598 42df0110fa89806f3a259154032fb7b7 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1768997992.09736 "d:/class VGU edition/Machine learning/Project/Report/main.tex" "main.pdf" "main" 1768997995.37264 0
+["pdflatex"] 1769499892.90247 "d:/class VGU edition/Machine learning/Project/Report/main.tex" "main.pdf" "main" 1769499896.35169 0
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d4q673.enc" 1768133338 2978 6d777d1174162fa94ff58f36782f4570 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc" 1768133338 3071 cfa92ee28d698dd9275559d9d1c3a233 ""
-  "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc" 1768133497 3416 3b99a05a42a4705ec5a5521d2bffa072 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc" 1768133497 3159 6cd87b3b51190b4d6117d4c2f083ba2e ""
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc" 1768133497 7007 7bfc8f72039f2cce6ca911c3c71db584 ""
   "d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-ts1.enc" 1768133497 2923 6a3d03919e8648554154ee58dc078229 ""
@@ -307,12 +306,12 @@
   "d:/Software/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768133509 575608 598993ea7e1e7b6fb3ff41b758cc7899 ""
   "d:/Software/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1768132183 3436981 c14d4b73d3830329a902d477cdf68b69 ""
   "d:/Software/texlive/2025/texmf.cnf" 1768131984 713 614551405fc44b98efbf516466e3c909 ""
-  "d:/class VGU edition/Machine learning/Project/Report/main.tex" 1768997991 9270 271f75457cbf36110cbe2a4e866bb6a2 ""
+  "d:/class VGU edition/Machine learning/Project/Report/main.tex" 1769499892 9403 5930ca923955299e9a090537a1bf1c2e ""
   "figures/confusion_matrix.pdf" 1768334562 20935 48c4cf979247692ce32968b741924611 ""
-  "main.aux" 1768997994 4284 797ad4b6e7710f3e2939dd63b354e185 "pdflatex"
-  "main.bbl" 1768650943 5905 19feeb687bd57c749311267aea59d9ea "biber main"
-  "main.run.xml" 1768997994 2367 a824c96d47a069a0d2c99a0d837f536d "pdflatex"
-  "main.tex" 1768997991 9270 271f75457cbf36110cbe2a4e866bb6a2 ""
+  "main.aux" 1769499895 4284 ab620e3c042801bd17ed9e4004670805 "pdflatex"
+  "main.bbl" 1769442717 5905 19feeb687bd57c749311267aea59d9ea "biber main"
+  "main.run.xml" 1769499895 2367 a824c96d47a069a0d2c99a0d837f536d "pdflatex"
+  "main.tex" 1769499892 9403 5930ca923955299e9a090537a1bf1c2e ""
   "tau-class/tau.cls" 1768342373 16974 0f96ad84a5fd68abb12323c421c257ae ""
   "tau-class/taubabel.sty" 1768052576 3672 1ef12c3a95220b69aa6ab01dd68fcd33 ""
   "tau-class/tauenvs.sty" 1768052576 2831 e86de0317572edc6f1be19b58a727dd1 ""

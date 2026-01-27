@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.11)  21 JAN 2026 13:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.11)  27 JAN 2026 08:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1652,24 +1652,24 @@ LaTeX Font Info:    Trying to load font information for LS2+stix2tt on input lin
 File: ls2stix2tt.fd 2018/04/02 v2.0.0-latex stix2 typewriter LS2 font definitions
 )
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' in size <7> not available
-(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 117.
+(Font)              Font shape `T1/FiraSans-OsF/bold/n' tried instead on input line 119.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/bold/n' will be
-(Font)              scaled to size 7.0pt on input line 117.
+(Font)              scaled to size 7.0pt on input line 119.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' in size <7> not available
-(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 120.
+(Font)              Font shape `T1/FiraSans-OsF/regular/n' tried instead on input line 122.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/regular/n' will be
-(Font)              scaled to size 7.0pt on input line 120.
+(Font)              scaled to size 7.0pt on input line 122.
 
-Overfull \hbox (6.685pt too wide) in paragraph at lines 120--141
+Overfull \hbox (6.685pt too wide) in paragraph at lines 122--143
 [][] 
  []
 
 <figures/confusion_matrix.pdf, id=45, 578.16pt x 433.62pt>
 File: figures/confusion_matrix.pdf Graphic file (type pdf)
 <use figures/confusion_matrix.pdf>
-Package pdftex.def Info: figures/confusion_matrix.pdf  used on input line 153.
+Package pdftex.def Info: figures/confusion_matrix.pdf  used on input line 156.
 (pdftex.def)             Requested size: 232.36761pt x 174.27199pt.
-LaTeX Font Info:    Trying to load font information for TS1+stix2 on input line 170.
+LaTeX Font Info:    Trying to load font information for TS1+stix2 on input line 173.
 (d:/Software/texlive/2025/texmf-dist/tex/latex/stix2-type1/ts1stix2.fd
 File: ts1stix2.fd 2018/04/02 v2.0.0-latex stix2 TS1 font definitions
 )
@@ -1677,23 +1677,23 @@ Package microtype Info: Character `textflorin ' is missing
 (microtype)             in font `TS1/stix2/m/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Underfull \hbox (badness 1394) in paragraph at lines 179--179
+Underfull \hbox (badness 1394) in paragraph at lines 182--182
 []\T1/stix2/m/n/8 (+20) D. P. Hughes and M. Salathé, ^^P  An open ac-cess repos-i-tory of im-
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 179--179
+Underfull \hbox (badness 1377) in paragraph at lines 182--182
 \T1/stix2/m/n/8 (+20) di-ag-nos-tics through ma-chine learn-ing and crowd-sourc-ing^^Q, \T1/stix2/m/it/8 (+20) CoRR\T1/stix2/m/n/8 (+20) ,
  []
 
-LaTeX Font Info:    Trying to load font information for T1+FiraMono-TOsF on input line 179.
+LaTeX Font Info:    Trying to load font information for T1+FiraMono-TOsF on input line 182.
 (d:/Software/texlive/2025/texmf-dist/tex/latex/fira/T1FiraMono-TOsF.fd
 File: T1FiraMono-TOsF.fd 2019/10/10 (autoinst) Font definitions for T1/FiraMono-TOsF.
 )
 LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/n' in size <8> not available
-(Font)              Font shape `T1/FiraMono-TOsF/regular/n' tried instead on input line 179.
+(Font)              Font shape `T1/FiraMono-TOsF/regular/n' tried instead on input line 182.
 LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/regular/n' will be
-(Font)              scaled to size 6.80005pt on input line 179.
+(Font)              scaled to size 6.80005pt on input line 182.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FiraMono-TOsF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1701,9 +1701,9 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1{d:/Software/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_iln36p.enc}
 
 
-{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-ts1.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d4q673.enc} <./figures/confusion_matrix.pdf>] 
+{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-ts1.enc}{d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/fira/fir_d4q673.enc} <./figures/confusion_matrix.pdf>] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
-runsystem(latexminted cleantemp  --timestamp 20260121131952 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20260127084453 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
 
 (./main.aux)
  ***********
@@ -1715,18 +1715,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54682 strings out of 468662
- 1102843 string characters out of 5441351
+ 54681 strings out of 468662
+ 1102827 string characters out of 5441351
  2095457 words of memory out of 5000000
  82446 multiletter control sequences out of 15000+600000
  833169 words of font info for 180 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  137i,12n,143p,1056b,1754s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraMono-Regular.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Bold.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/fira/FiraSans-Regular.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/stix2-type1/STIX2Math.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Bold.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb><d:/Software/texlive/2025/texmf-dist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb>
-Output written on main.pdf (1 page, 795405 bytes).
+Output written on main.pdf (1 page, 784432 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 198 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  15 named destinations out of 1000 (max. 500000)
  47842 words of extra memory for PDF output out of 51595 (max. 10000000)
 

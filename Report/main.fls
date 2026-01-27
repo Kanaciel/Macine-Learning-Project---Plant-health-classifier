@@ -623,7 +623,6 @@ INPUT d:/Software/texlive/2025/texmf-dist/fonts/vf/public/fira/FiraSans-Bold-osf
 INPUT d:/Software/texlive/2025/texmf-dist/fonts/tfm/public/fira/FiraSans-Bold-osf-t1--base.tfm
 INPUT d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc
 INPUT d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc
-INPUT d:/Software/texlive/2025/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc
 INPUT d:/Software/texlive/2025/texmf-dist/fonts/vf/public/fira/FiraSans-Bold-osf-t1.vf
 INPUT d:/Software/texlive/2025/texmf-dist/fonts/tfm/public/fira/FiraSans-Bold-osf-t1--base.tfm
 INPUT d:/Software/texlive/2025/texmf-dist/fonts/vf/public/fira/FiraSans-Regular-osf-t1.vf

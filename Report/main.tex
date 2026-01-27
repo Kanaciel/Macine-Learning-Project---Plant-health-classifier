@@ -103,9 +103,11 @@ This project aims to present a solution to detect disease on a plant, in this ca
 
 		While initially a custom Convolutional Neural Network(CNN) was  developed, a decision was made to adopt a transfer learning approach, utilizing the pretrained EfficientNetB0 model. EfficientNetB0 is trained upon a much larger and more diverse dataset, allowing for better feature extraction. Furthermore, because EfficientNetB0 is already pre-trained, we can freeze the base layers, allowing for faster training time and preventing overfitting.
 
+
+
 	\subsection{Classification}
 
-   		The multi-channel features maps of size $C \times H \times W$ are flattened into 1d vector, which is then passed through a fully connected layer of 512 neurons. The final fully connected layer contains 10 neurons, corresponding to the 10 target classes.
+		The multi-channel feature maps extracted by the EfficientNetB0 backbone are flattened into a one-dimensional feature vector. A Dropout layer with a rate of 0.2 is applied prior to classification to mitigate overfitting. The features are then processed by a fully connected layer with 512 neurons and ReLU activation, followed by a 10-neuron output layer that generates the class logits.
 
 	\subsection{GUI}
 		The GUI is built using the Python CustomTKinter library, allowing the user to train, test the model using user uploaded images, and also see its performance metrics using the test dataset.
@@ -143,6 +145,7 @@ This project aims to present a solution to detect disease on a plant, in this ca
       \end{table}
 		
 	Overall, the model performed relatively well, achieving an overall accuracy of 98.38\%. This is a marked improvement in comparision to a custom-made CNN model, which averages around 93\% accuracy.
+
 
 	As shown by the performance metrics table, there is a balance between precision and recall among all disease categories. The "Tomato Yellow Leaf Curl Virus" class achieved the highest F1-Score of 99.54\%, followed closely by "Healthy" 99.05\%. The lowest, yet still satisfactory, F1-Scores were for "Early Blight" and "Target Spot" at 94.85\% and 95.77\% respectively.
     	

@@ -16,7 +16,7 @@ from GUI import GUIapp, GUItrain, GUItest, GUIeval
 
 #----------  CLI test ---------------#
 #used in case you want to train the model, you can in GUI but it's defaulted to 5 epochs and also the entire GUI freezes
-"""
+#"""
 
 tomato_dataset = CNNdataloader.load_tomato_dataset()
 train_data,test_data,train_loader,test_loader = CNNdataloader.create_train_and_test_dataset(64,tomato_dataset)
@@ -26,8 +26,8 @@ classifier_model =CNNmodel.init_model("default model")
 input_prompt =f"\nselect [1] to train model\nselect [2] to test model\n"
 prompt =int(input(input_prompt))
 if prompt ==1:    
-    train_epochs = int(input("how many epochs"))
-    CNNmodel.train_test_model(train_loader,test_loader,classifier_model,train_epochs, 0.0005)
+    train_epochs = int(input("how many epochs: \n"))
+    CNNmodel.train_test_model(train_loader,test_loader,classifier_model,train_epochs, 0.0001)
     CNNmodel.save_model(classifier_model,"default model")
 elif prompt == 2:
     accuracy = CNNeval.check_accuracy_from_dataset(classifier_model,test_data)
@@ -42,14 +42,14 @@ elif prompt == 2:
     CNNeval.display_confusion_matrix(confusion_matrix)
     
 
-"""
+#"""
 
 
 #------------------ GUI test -----------------------#
 
 # all that you need to run GUI
 
-#"""
+"""
 
 GUIapp.Init_App()
 

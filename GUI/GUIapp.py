@@ -7,7 +7,7 @@ from . import GUItest, GUItrain, GUIeval
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("Armored Core 7: Electrosphere")
+        self.title("Classifier: Electrosphere")
         self.geometry("900x600")
         self.after(100, self.maximize)
     
@@ -43,7 +43,7 @@ class menu_frame(ctk.CTkFrame):
             self.grid_columnconfigure(i, weight=1)
     
         self.title_logo = ctk.CTkLabel(self, 
-                                       text = "Blue Archive",
+                                       text = "Plant Health Classifier",
                                          font= ctk.CTkFont("Minecraftia", size= 60))
         
         self.title_logo.grid(row=0, 
@@ -88,5 +88,6 @@ class menu_frame(ctk.CTkFrame):
 
 
 def Init_App():
+    ctk.set_appearance_mode("dark")  
     app = App()
     app.mainloop()

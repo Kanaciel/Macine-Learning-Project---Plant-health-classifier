@@ -9,8 +9,7 @@ root_path = Path(__file__).resolve().parent.parent
 models_folder_path = root_path/"Models"
 
 
-#---------functions and stuffs-----#
-#abberation of god
+#---------main classifier model-----#
 
 class Classifier(nn.Module):
       def __init__(self):
@@ -35,6 +34,9 @@ class Classifier(nn.Module):
             return self.base_model(x)
             
 
+#------initilizing model----#
+
+
 def init_model(model_name = None):
       model = Classifier()
       model.to(device)
@@ -56,6 +58,9 @@ def init_model(model_name = None):
       return model
 
 
+#---------functions for training and testing model---------#
+
+
 def train_model(dataloader, model, learning_rate = 0.002):
       optimizer = torch.optim.Adam(model.parameters(), lr= learning_rate)
       loss_fn = nn.CrossEntropyLoss()
@@ -64,7 +69,7 @@ def train_model(dataloader, model, learning_rate = 0.002):
       num_batches = len(dataloader)
       correct_prediction = 0.0
       total_loss  = 0
-
+      model.train()
       for batch, (image,label) in enumerate(dataloader):
             image, label =  image.to(device), label.to(device)
 
@@ -117,12 +122,13 @@ def train_test_model(train_dataloader, test_dataloader,model,epochs=10, learning
       start_time = time.time()
       for epoch in range(epochs):
             train_model(train_dataloader, model, learning_rate)
+            test_model(test_dataloader,model)
       end_time = time.time()
       train_test_time = end_time - start_time
       print("\nFinished training")
       print(f"Total Training Time for {epochs} epochs: {train_test_time:.2f} seconds")
       print(f"Average Time per epochs: {train_test_time/epochs} seconds")
-      test_model(test_dataloader,model)
+      
 
 
 def save_model(model, model_name=None):
